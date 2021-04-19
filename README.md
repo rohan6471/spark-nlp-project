@@ -51,7 +51,13 @@ results=resultRDD.collect()
 df = pd.DataFrame.from_records(results, columns =[xlabel, ylabel])
 df2=df.nlargest(10,["count"])
 ```
-- Using 'matplotlib and 'Seaborn' libraries of python plot the results using Barplot 
+- Using 'matplotlib and 'Seaborn' libraries of python plot the results using Barplot  
+```
+plt.figure(figsize=(10,3))
+sns.barplot(xlabel, ylabel, data=df2, palette="Blues_d").set_title(title)
+```
+
+![](https://github.com/rohan6471/spark-nlp-project/blob/main/plot.PNG)
 
 # References:
 
