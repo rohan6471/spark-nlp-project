@@ -4,11 +4,11 @@
 The processing is been done on raw text data retrived from one of the popular books from project Gutenberg. This text consists much of messy data including non-letter characters and stop words.
 
 ## Tools Used For Processing:
- Spark with Python
- Databricks Community Cloud 
+* Spark with Python
+* Databricks Community Cloud 
  
  ## Steps to process the data:
-- First Step is to retrieve the text from url using 'urlib' python library and then moving the file to databricks file system to process the data on cloud
+- First Step is to retrieve the text from url using 'urllib' python library and then moving the file to databricks file system to process the data on cloud
  ``` 
  import urllib.request
 
@@ -53,7 +53,10 @@ df2=df.nlargest(10,["count"])
 ```
 - Using 'matplotlib and 'Seaborn' libraries of python plot the results using Barplot 
 
-#References:
+# References:
 
 - https://www.gutenberg.org/files/64317/64317-0.txt
 - https://datascience-enthusiast.com/Python/cs110_lab3a_word_count_rdd.html
+
+### Author 
+   Rohan Goud
