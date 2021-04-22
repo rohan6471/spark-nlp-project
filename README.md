@@ -51,13 +51,22 @@ results=resultRDD.collect()
 df = pd.DataFrame.from_records(results, columns =[xlabel, ylabel])
 df2=df.nlargest(10,["count"])
 ```
-- Using 'matplotlib and 'Seaborn' libraries of python plot the results using Barplot  
+- Using 'matplotlib library of python plot the results using Horizontal bar  
 ```
-plt.figure(figsize=(10,3))
-sns.barplot(xlabel, ylabel, data=df2, palette="Blues_d").set_title(title)
+fig, ax = plt.subplots(figsize=(8, 8))
+
+# Plot horizontal bar graph
+df2.sort_values(by='count').plot.barh(x='word',
+                      y='count',
+                      ax=ax,
+                      color="lightblue")
+
+ax.set_title("Top 20 Common Words Found in Text ")
+
+plt.show()
 ```
 
-![](https://github.com/rohan6471/spark-nlp-project/blob/main/plot.PNG)
+![](https://github.com/rohan6471/spark-nlp-project/blob/main/hbar.PNG)
 
 # References:
 
