@@ -37,7 +37,7 @@ non_letter_rdd=wordsRDD.map(lambda words: removePunctuation(words))
 from pyspark.ml.feature import StopWordsRemover
 remover=StopWordsRemover()
 stopwords=remover.getStopWords()
-cleanwordsRDD=rdd.filter(lambda word: word not in stopwords).map(lambda word: (word,1))
+cleanwordsRDD=non_letter_rdd.filter(lambda word: word not in stopwords).map(lambda word: (word,1))
 ```
 - Finally, reduce all the intermediate values using 'reduceByKey' transformation and collect the results using collect action.
 ```
@@ -66,7 +66,7 @@ ax.set_title("Top 20 Common Words Found in Text ")
 plt.show()
 ```
 
-![](https://github.com/rohan6471/spark-nlp-project/blob/main/hbar.PNG)
+![](https://github.com/rohan6471/spark-nlp-project/blob/main/finalimg.PNG)
 
 # References:
 
